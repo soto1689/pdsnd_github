@@ -1,5 +1,4 @@
-### Author: Date created
-Luis Soto: 11/04/19
+#### Luis Soto: 11/04/19
 
 # Udacity Python Bikeshare Project
 
