@@ -6,6 +6,17 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+def city_filter_method(city):
+    while city == "none":
+        city = input("\nEnter what city you would like to analyze.\n\nYou are able to choose one of below three cities\n\n chicago \n new york city \n washington \n\n").lower()
+        if city == "chicago"or city =="new york city"or city == "washington":
+            print("\nAwesome! \U0001F603  Lets get started and analyze bikeshare data from {} \n".format(city.title()))
+            break
+        else:
+            print("\n'{}' was not a valid entry.\n".format(city))
+            city = "none"
+    return city
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -20,14 +31,7 @@ def get_filters():
     
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = "none"
-    while city == "none":
-        city = input("\nEnter what city you would like to analyze.\n\nYou are able to choose one of below three cities\n\n chicago \n new york city \n washington \n\n").lower()
-        if city == "chicago"or city =="new york city"or city == "washington":
-            print("\nAwesome! \U0001F603  Lets get started and analyze bikeshare data from {} \n".format(city.title()))
-            break
-        else:
-            print("\n'{}' was not a valid entry.\n".format(city))
-            city = "none"
+    city = city_filter_method(city)
     
     
     # get user input for month (all, january, february, ... , june)
